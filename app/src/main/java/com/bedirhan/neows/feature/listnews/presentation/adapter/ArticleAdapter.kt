@@ -6,11 +6,12 @@ import androidx.recyclerview.widget.ListAdapter
 import com.bedirhan.neows.databinding.ItemNewsBinding
 import com.bedirhan.neows.feature.listnews.data.remote.model.Article
 
-class ArticleAdapter : ListAdapter<Article,NewsViewHolder>(NewsDiffCallBack()){
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
-        return  NewsViewHolder(
+class ArticleAdapter : ListAdapter<Article, NewsViewHolder>(NewsDiffCallBack()) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)
+            : NewsViewHolder {
+        return NewsViewHolder(
             ItemNewsBinding.inflate(
-                LayoutInflater.from(parent.context),parent,false
+                LayoutInflater.from(parent.context), parent, false
             )
         )
     }
