@@ -24,7 +24,7 @@ class NewsViewHolder(
     private val options = RequestOptions()
         .placeholder(customizedPlaceHolder())
         .fitCenter()
-        .error(R.mipmap.ic_launcher)
+        .error(R.drawable.placeholder_centered)
 
     fun bind(news: Article) {
         binding.apply {
