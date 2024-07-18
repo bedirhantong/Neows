@@ -30,4 +30,5 @@ class AppModule {
         return retrofit.create(NewsApiService::class.java)
     }
 
+
 }
