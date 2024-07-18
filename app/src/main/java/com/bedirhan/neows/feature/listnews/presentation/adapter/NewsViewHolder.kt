@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bedirhan.neows.R
 import com.bedirhan.neows.databinding.ItemNewsBinding
-import com.bedirhan.neows.feature.listnews.data.remote.model.Article
+import com.bedirhan.neows.feature.listnews.domain.uimodel.ArticleUiModel
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
@@ -26,7 +26,7 @@ class NewsViewHolder(
         .fitCenter()
         .error(R.drawable.placeholder_centered)
 
-    fun bind(news: Article) {
+    fun bind(news: ArticleUiModel) {
         binding.apply {
             textViewTitle.text = news.title
             textViewDescription.text = news.description

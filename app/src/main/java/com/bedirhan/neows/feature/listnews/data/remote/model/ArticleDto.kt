@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Article(
+data class ArticleDto(
     @SerializedName("author")
     val author: String?,
     @SerializedName("content")
@@ -15,7 +15,7 @@ data class Article(
     @SerializedName("publishedAt")
     val publishedAt: String?,
     @SerializedName("source")
-    val source: Source?,
+    val source: SourceDto?,
     @SerializedName("title")
     val title: String?,
     @SerializedName("url")

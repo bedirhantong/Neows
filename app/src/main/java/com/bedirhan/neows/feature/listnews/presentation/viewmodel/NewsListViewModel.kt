@@ -4,7 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bedirhan.neows.feature.listnews.data.remote.model.Article
+import com.bedirhan.neows.feature.listnews.data.remote.model.ArticleDto
+import com.bedirhan.neows.feature.listnews.domain.uimodel.ArticleUiModel
 import com.bedirhan.neows.feature.listnews.domain.usecase.GetNewsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -17,8 +18,8 @@ class NewsListViewModel @Inject constructor(
     private val getNewsUseCase: GetNewsUseCase
 ) : ViewModel() {
 
-    private val _articlesLiveData = MutableLiveData<List<Article>>()
-    val articlesLiveData: LiveData<List<Article>>
+    private val _articlesLiveData = MutableLiveData<List<ArticleUiModel>>()
+    val articlesLiveData: LiveData<List<ArticleUiModel>>
         get() = _articlesLiveData
 
     fun getTopHeadlines() {
