@@ -7,10 +7,8 @@ import javax.inject.Inject
 
 class ListNewsRepositoryImpl @Inject constructor(
     private val apiService: NewsApiService
-): ListNewsRepository {
+) : ListNewsRepository {
     override suspend fun getNews(): ArticleResponse {
         return apiService.getNews().body()!!
     }
-
-
 }
