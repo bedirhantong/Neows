@@ -1,6 +1,6 @@
 package com.bedirhan.neows.feature.listnews.data.remote
 
-import com.bedirhan.neows.feature.listnews.data.remote.model.ArticleResponse
+import com.bedirhan.neows.feature.listnews.data.remote.model.ArticleResponseDto
 import com.bedirhan.neows.utils.ApiConstants
 import retrofit2.Response
 import retrofit2.http.GET
@@ -14,5 +14,5 @@ interface NewsApiService {
         country: String = ApiConstants.NEWS_COUNTRY_CODE,
         @Query("apiKey")
         apiKey: String = ApiConstants.NEWS_API_KEY,
-        ): Response<ArticleResponse>
+    ): Response<ArticleResponseDto>
 }
