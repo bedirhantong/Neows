@@ -16,5 +16,6 @@ class ListNewsModule {
 
     @Provides
     @Singleton
-    fun provideNewsRepository(api: NewsApiService): ListNewsRepository = ListNewsRepositoryImpl(api)
+    fun provideNewsRepository(api: NewsApiService)
+            : ListNewsRepository = ListNewsRepositoryImpl(api)
 }

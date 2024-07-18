@@ -9,16 +9,19 @@ class NewsDiffCallBack() : DiffUtil.ItemCallback<Article>() {
     }
 
     override fun areContentsTheSame(oldItem: Article, newItem: Article): Boolean {
-        return when{
-            oldItem.title != newItem.title ->{
+        return when {
+            oldItem.title != newItem.title -> {
                 false
             }
-            oldItem.url != newItem.url ->{
+
+            oldItem.url != newItem.url -> {
                 false
             }
-            oldItem.author != newItem.author ->{
+
+            oldItem.author != newItem.author -> {
                 false
             }
+
             else -> true
         }
     }

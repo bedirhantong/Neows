@@ -17,10 +17,9 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: NewsListViewModel by viewModels()
 
-    private val recyclerAdapter : ArticleAdapter by lazy {
+    private val recyclerAdapter: ArticleAdapter by lazy {
         ArticleAdapter()
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

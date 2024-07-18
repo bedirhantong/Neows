@@ -2,7 +2,7 @@
 <resources>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="colorPrimary">#3F51B5</color> <!-- Ana renk -->
-    <color name="colorPrimaryDark">#303F9F</color> <!-- Koyu ana renk -->
-    <color name="colorAccent">#FF4081</color> <!-- Vurgu renk -->
+    <color name="colorPrimary">#E86A33</color> <!-- Ana renk -->
+    <color name="colorSecondary">#B0B3B8</color> <!-- Koyu ana renk -->
+    <color name="colorPrimaryDark">#1E2C3F</color> <!-- Vurgu renk -->
 </resources>

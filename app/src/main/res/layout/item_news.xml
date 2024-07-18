@@ -10,30 +10,31 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_margin="10dp"
         android:orientation="vertical"
-        app:cardCornerRadius="12dp"
+        app:cardCornerRadius="15dp"
         app:cardElevation="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="10dp">
 
             <ImageView
                 android:id="@+id/imageViewArticle"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="120dp"
                 android:scaleType="centerCrop"
-                tools:src="@drawable/ic_launcher_background" />
+                tools:src="@drawable/placeholder_centered" />
 
             <TextView
                 android:id="@+id/textViewTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:textColor="@android:color/black"
+                android:maxLines="2"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:text="Article Title" />
@@ -43,8 +44,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:textColor="@android:color/darker_gray"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="14sp"
+                android:maxLines="3"
                 tools:text="Article Description" />
 
             <TextView
@@ -52,8 +54,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:textColor="@android:color/holo_blue_dark"
+                android:textColor="@color/colorSecondary"
                 android:textSize="14sp"
+                android:maxLines="1"
+                android:textStyle="bold"
                 tools:text="Author" />
 
             <TextView
@@ -61,8 +65,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:textColor="@android:color/darker_gray"
+                android:maxLines="1"
+                android:textColor="@color/colorSecondary"
                 android:textSize="12sp"
+                android:textStyle="bold"
                 tools:text="Published At" />
         </LinearLayout>
 

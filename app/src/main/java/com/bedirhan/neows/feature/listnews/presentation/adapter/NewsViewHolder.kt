@@ -12,17 +12,21 @@ class NewsViewHolder(
     private val binding: ItemNewsBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    private fun customizedPlaceHolder (): CircularProgressDrawable {
-        return  CircularProgressDrawable(binding.root.context).apply {
-            strokeWidth = 8f
-            centerRadius = 40f
-            start()
-        }
+    private fun customizedPlaceHolder(): CircularProgressDrawable {
+        return CircularProgressDrawable(binding.root.context)
+            .apply {
+                strokeWidth = 8f
+                centerRadius = 40f
+                start()
+            }
     }
 
     private val options = RequestOptions()
-        .placeholder(customizedPlaceHolder()).fitCenter().error(R.mipmap.ic_launcher)
-    fun bind(news: Article){
+        .placeholder(customizedPlaceHolder())
+        .fitCenter()
+        .error(R.drawable.placeholder_centered)
+
+    fun bind(news: Article) {
         binding.apply {
             textViewTitle.text = news.title
             textViewDescription.text = news.description
@@ -31,7 +35,6 @@ class NewsViewHolder(
         }
         Glide.with(binding.imageViewArticle.context)
             .setDefaultRequestOptions(options)
-            .load(news.urlToImage)
-            .into(binding.imageViewArticle)
+            .load(news.urlToImage).into(binding.imageViewArticle)
     }
 }
