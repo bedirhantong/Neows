@@ -1,5 +1,6 @@
 package com.bedirhan.neows.feature.listnews.data.remote
 
+import com.bedirhan.neows.BuildConfig
 import com.bedirhan.neows.feature.listnews.data.remote.model.ArticleResponseDto
 import retrofit2.Response
 import retrofit2.http.GET
@@ -41,7 +42,7 @@ interface NewsApiService {
     ): Response<ArticleResponseDto>
 
     companion object {
-        const val NEWS_API_KEY = ""
+        const val NEWS_API_KEY = BuildConfig.API_KEY
         const val NEWS_COUNTRY_CODE = "us"
         const val TOP_HEADLINES_END_POINT = "v2/top-headlines"
         const val EVERYTHING_END_POINT = "v2/everything"
