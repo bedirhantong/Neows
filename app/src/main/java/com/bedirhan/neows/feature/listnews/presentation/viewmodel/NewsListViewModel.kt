@@ -4,20 +4,17 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bedirhan.neows.feature.listnews.data.remote.model.ArticleDto
 import com.bedirhan.neows.feature.listnews.domain.uimodel.ArticleUiModel
-import com.bedirhan.neows.feature.listnews.domain.usecase.GetNewsUseCase
+import com.bedirhan.neows.feature.listnews.domain.usecase.GetTrendingNewsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-
 @HiltViewModel
 class NewsListViewModel @Inject constructor(
-    private val getNewsUseCase: GetNewsUseCase
+    private val getNewsUseCase: GetTrendingNewsUseCase
 ) : ViewModel() {
-
     private val _articlesLiveData = MutableLiveData<List<ArticleUiModel>>()
     val articlesLiveData: LiveData<List<ArticleUiModel>>
         get() = _articlesLiveData

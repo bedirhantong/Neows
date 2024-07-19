@@ -6,7 +6,6 @@ import com.bedirhan.neows.feature.listnews.domain.uimodel.ArticleResponseUiModel
 import com.bedirhan.neows.feature.listnews.domain.uimodel.ArticleUiModel
 
 class NewsMapper {
-
     fun toDomain(response: ArticleDto, sourceMapper: SourceMapper): ArticleUiModel = ArticleUiModel(
         content = response.content,
         description = response.description,
@@ -17,7 +16,6 @@ class NewsMapper {
         publishedAt = response.publishedAt,
         source = response.source?.let { sourceMapper.toDomain(it) },
     )
-
 
     fun fromDomain(articleDomainModel: ArticleUiModel, sourceMapper: SourceMapper)
             : ArticleDto = ArticleDto(
@@ -30,7 +28,6 @@ class NewsMapper {
         content = articleDomainModel.content,
         source = articleDomainModel.source?.let { sourceMapper.fromDomain(it) }
     )
-
 
     fun toDomainList(tList: List<ArticleDto>): List<ArticleUiModel> =
         tList.map { response ->
