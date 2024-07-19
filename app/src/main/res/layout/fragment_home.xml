@@ -3,23 +3,60 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_marginTop="20dp"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="30dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".feature.home.HomeFragment">
+    tools:context=".feature.listnews.presentation.HomeFragment">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/categoriesTabLayout"
+        android:layout_width="wrap_content"
+        app:layout_wrapBehaviorInParent="skipped"
+        android:layout_height="wrap_content"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabTextAppearance="@style/CustomTabText"
+        app:tabMode="scrollable">
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="general" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="business" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="health" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="science" />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sports" />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="technology" />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="entertainment" />
+    </com.google.android.material.tabs.TabLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewHome"
         android:layout_width="match_parent"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="20dp"
         android:orientation="vertical"
-        tools:listitem="@layout/item_news"
-        android:layout_height="match_parent" />
-
-<!--    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
-<!--    app:spanCount="2"-->
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_news" />
 </FrameLayout>

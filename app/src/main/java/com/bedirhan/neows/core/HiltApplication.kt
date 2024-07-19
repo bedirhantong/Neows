@@ -1,4 +1,4 @@
-package com.bedirhan.neows
+package com.bedirhan.neows.core
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

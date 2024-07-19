@@ -1,40 +1,20 @@
 package com.bedirhan.neows.feature.listnews.presentation.adapter
 
 import androidx.recyclerview.widget.RecyclerView
-import androidx.swiperefreshlayout.widget.CircularProgressDrawable
-import com.bedirhan.neows.R
+import com.bedirhan.neows.common.loadImage
 import com.bedirhan.neows.databinding.ItemNewsBinding
-import com.bedirhan.neows.feature.listnews.domain.uimodel.ArticleUiModel
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-
+import com.bedirhan.neows.feature.listnews.domain.uimodel.NewsUiModel
 class NewsViewHolder(
     private val binding: ItemNewsBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    private fun customizedPlaceHolder(): CircularProgressDrawable {
-        return CircularProgressDrawable(binding.root.context)
-            .apply {
-                strokeWidth = 8f
-                centerRadius = 40f
-                start()
-            }
-    }
-
-    private val options = RequestOptions()
-        .placeholder(customizedPlaceHolder())
-        .fitCenter()
-        .error(R.drawable.placeholder_centered)
-
-    fun bind(news: ArticleUiModel) {
+    fun bind(news: NewsUiModel) {
         binding.apply {
             textViewTitle.text = news.title
             textViewDescription.text = news.description
             textViewPublishedAt.text = news.publishedAt
             textViewAuthor.text = news.author
+            imageViewArticle.loadImage(news.urlToImage)
         }
-        Glide.with(binding.imageViewArticle.context)
-            .setDefaultRequestOptions(options)
-            .load(news.urlToImage).into(binding.imageViewArticle)
     }
 }

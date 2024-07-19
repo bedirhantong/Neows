@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.bedirhan.neows.feature.home.HomeFragment"
+        android:name="com.bedirhan.neows.feature.listnews.presentation.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action

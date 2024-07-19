@@ -5,4 +5,5 @@
     <color name="colorPrimary">#E86A33</color> <!-- Ana renk -->
     <color name="colorSecondary">#B0B3B8</color> <!-- Koyu ana renk -->
     <color name="colorPrimaryDark">#1E2C3F</color> <!-- Vurgu renk -->
+    <color name="colorAccent">#E39D36</color>
 </resources>
