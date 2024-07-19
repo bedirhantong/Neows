@@ -4,9 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.bedirhan.neows.databinding.ItemNewsBinding
-import com.bedirhan.neows.feature.listnews.domain.uimodel.ArticleUiModel
+import com.bedirhan.neows.feature.listnews.domain.uimodel.NewsUiModel
 
-class ArticleAdapter : ListAdapter<ArticleUiModel, NewsViewHolder>(NewsDiffCallBack()) {
+class NewsAdapter(
+) : ListAdapter<NewsUiModel, NewsViewHolder>(NewsDiffCallBack()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)
             : NewsViewHolder {
         return NewsViewHolder(

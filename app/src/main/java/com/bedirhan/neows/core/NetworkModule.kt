@@ -1,7 +1,6 @@
-package com.bedirhan.neows.di
+package com.bedirhan.neows.core
 
 import com.bedirhan.neows.feature.listnews.data.remote.NewsApiService
-import com.bedirhan.neows.utils.ApiConstants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,7 +16,7 @@ class NetworkModule {
     @Provides
     fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(ApiConstants.NEWS_BASE_URL)
+            .baseUrl(NEWS_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
@@ -26,5 +25,9 @@ class NetworkModule {
     @Provides
     fun provideNewsService(retrofit: Retrofit): NewsApiService {
         return retrofit.create(NewsApiService::class.java)
+    }
+
+    companion object {
+        const val NEWS_BASE_URL = "https://newsapi.org/"
     }
 }

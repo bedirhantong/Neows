@@ -2,11 +2,11 @@ package com.bedirhan.neows.common.mapper.news
 
 import com.bedirhan.neows.feature.listnews.data.remote.model.ArticleDto
 import com.bedirhan.neows.feature.listnews.data.remote.model.ArticleResponseDto
-import com.bedirhan.neows.feature.listnews.domain.uimodel.ArticleResponseUiModel
-import com.bedirhan.neows.feature.listnews.domain.uimodel.ArticleUiModel
+import com.bedirhan.neows.feature.listnews.domain.uimodel.NewsResponseUiModelList
+import com.bedirhan.neows.feature.listnews.domain.uimodel.NewsUiModel
 
 class NewsMapper {
-    fun toDomain(response: ArticleDto, sourceMapper: SourceMapper): ArticleUiModel = ArticleUiModel(
+    fun toDomain(response: ArticleDto, sourceMapper: SourceMapper): NewsUiModel = NewsUiModel(
         content = response.content,
         description = response.description,
         title = response.title,
@@ -17,7 +17,7 @@ class NewsMapper {
         source = response.source?.let { sourceMapper.toDomain(it) },
     )
 
-    fun fromDomain(articleDomainModel: ArticleUiModel, sourceMapper: SourceMapper)
+    fun fromDomain(articleDomainModel: NewsUiModel, sourceMapper: SourceMapper)
             : ArticleDto = ArticleDto(
         publishedAt = articleDomainModel.publishedAt,
         url = articleDomainModel.url,
@@ -29,19 +29,26 @@ class NewsMapper {
         source = articleDomainModel.source?.let { sourceMapper.fromDomain(it) }
     )
 
-    fun toDomainList(tList: List<ArticleDto>): List<ArticleUiModel> =
+    fun toDomainList(tList: List<ArticleDto>): List<NewsUiModel> =
         tList.map { response ->
             toDomain(response = response, SourceMapper())
         }
 
-    fun fromDomainList(domainList: List<ArticleUiModel>): List<ArticleDto> =
+    fun fromDomainList(domainList: List<NewsUiModel>): List<ArticleDto> =
         domainList.map {
             fromDomain(it, SourceMapper())
         }
 
-    fun toDomain(response: ArticleResponseDto): ArticleResponseUiModel = ArticleResponseUiModel(
-        articles = toDomainList(response.articles),
-        status = response.status,
-        totalResults = response.totalResults
-    )
+    fun toDomain(response: ArticleResponseDto): NewsResponseUiModelList? =
+        response.articles?.let { toDomainList(it) }?.let {
+            response.status?.let { it1 ->
+                response.totalResults?.let { it2 ->
+                    NewsResponseUiModelList(
+                        articles = it,
+                        status = it1,
+                        totalResults = it2
+                    )
+                }
+            }
+        }
 }

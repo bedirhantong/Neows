@@ -4,10 +4,10 @@ import com.bedirhan.neows.feature.listnews.domain.ListNewsRepository
 import com.bedirhan.neows.feature.listnews.domain.uimodel.NewsResponseUiModelList
 import javax.inject.Inject
 
-class GetTrendingNewsUseCase @Inject constructor(
+class SearchNewsUseCase @Inject constructor(
     private val newsRepository: ListNewsRepository
 ) {
-    suspend operator fun invoke(): NewsResponseUiModelList? {
-        return newsRepository.getPopularNews()
+    suspend operator fun invoke(searchDetail: String): NewsResponseUiModelList? {
+        return newsRepository.searchNewsByContent(searchDetail)
     }
 }
