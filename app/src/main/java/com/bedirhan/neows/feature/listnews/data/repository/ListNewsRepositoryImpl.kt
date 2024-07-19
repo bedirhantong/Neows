@@ -15,7 +15,7 @@ class ListNewsRepositoryImpl @Inject constructor(
         return response?.let { newsMapper.toDomain(it) }
     }
 
-    override suspend fun getNewsByCategory(choosenCategory: String): NewsResponseUiModelList? {
+    override suspend fun getNewsByCategory(choosenCategory : String): NewsResponseUiModelList? {
         val response = apiService.getNewsByCategoryEndpoint(category = choosenCategory).body()
         return response?.let { newsMapper.toDomain(it) }
     }
