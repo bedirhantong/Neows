@@ -13,7 +13,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getNewsUseCase: GetTrendingNewsUseCase,
     private val getNewsByCategoryUseCase: GetNewsByCategoryUseCase
 ) : ViewModel() {
     private val _articlesLiveData = MutableLiveData<List<NewsUiModel>?>()
