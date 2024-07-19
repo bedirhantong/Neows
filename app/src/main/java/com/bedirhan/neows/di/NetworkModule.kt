@@ -10,11 +10,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-
 @Module
 @InstallIn(SingletonComponent::class)
-class AppModule {
-
+class NetworkModule {
     @Singleton
     @Provides
     fun provideRetrofit(): Retrofit {
@@ -29,6 +27,4 @@ class AppModule {
     fun provideNewsService(retrofit: Retrofit): NewsApiService {
         return retrofit.create(NewsApiService::class.java)
     }
-
-
 }
